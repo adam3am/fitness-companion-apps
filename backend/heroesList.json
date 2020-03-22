@@ -1,0 +1,76 @@
+{
+"Heros": [
+  {
+      "Id": 1,
+      "WorkoutTitle": "Green Smash",
+      "DeskripsiSingkat": "Dedicated to strength and discipline building Perform the workouts over a four day period per week. Take a day off after two days of training.",
+      "ExcerciseData": [
+      {
+          "Exercise": "Incline Barbell Bench Press",
+          "WarmUp": "2 x 10-15",
+          "WorkingSets": "3 x 4-8",
+          "RestPeriod": "2 min"
+      },
+      {
+          "Exercise": "Barbell Bench Press",
+          "WarmUp": "",
+          "WorkingSets": "3 x 4-8",
+          "RestPeriod": "2 min"
+      },
+      {
+          "Exercise": "Bent Over Barbell Row",
+          "WarmUp": "2 x 10-15",
+          "WorkingSets": "3 x 4-8",
+          "RestPeriod": "2 min"
+      }]
+  },
+  {
+      "Id": 2,
+      "WorkoutTitle": "Stripped Captain",
+      "DeskripsiSingkat": "Build a pretty sturdy foundation of strength with a little muscle to boot. Perform the workouts over a four day period per week.",
+      "ExcerciseData": [
+      {
+          "Exercise": "Incline Barbell Bench Press",
+          "WarmUp": "2 x 10-15",
+          "WorkingSets": "3 x 4-8",
+          "RestPeriod": "2 min"
+      },
+      {
+          "Exercise": "Barbell Bench Press",
+          "WarmUp": "",
+          "WorkingSets": "3 x 4-8",
+          "RestPeriod": "2 min"
+      },
+      {
+          "Exercise": "Bent Over Barbell Row",
+          "WarmUp": "2 x 10-15",
+          "WorkingSets": "3 x 4-8",
+          "RestPeriod": "2 min"
+      }]
+  },
+  {
+      "Id": 3,
+      "WorkoutTitle": "Steele Muscle",
+      "DeskripsiSingkat": "Get ready to ramp up the intensity and really blow out the muscle. Perform the workouts over a four day period per week.",
+      "ExcerciseData": [
+      {
+          "Exercise": "Incline Barbell Bench Press",
+          "WarmUp": "2 x 10-15",
+          "WorkingSets": "3 x 4-8",
+          "RestPeriod": "2 min"
+      },
+      {
+          "Exercise": "Barbell Bench Press",
+          "WarmUp": "",
+          "WorkingSets": "3 x 4-8",
+          "RestPeriod": "2 min"
+      },
+      {
+          "Exercise": "Bent Over Barbell Row",
+          "WarmUp": "2 x 10-15",
+          "WorkingSets": "3 x 4-8",
+          "RestPeriod": "2 min"
+      }]
+  }
+]
+}

@@ -1,0 +1,16 @@
+{
+  "Personals": [
+  {
+      "Id": 1,
+      "Workout": "Incline Barbell Bench Press"
+  },
+  {
+      "Id": 2,
+      "Workout": "Barbell Bench Press"
+  },
+  {
+      "Id": 3,
+      "Workout": "Bent Over Barbell Row"
+  }
+]
+}
