@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <Navbar />
-    <div class="container my-3">
-      <Judul />
+    <Judul />
+    <section>
       <router-view/>
-    </div>
+    </section>
   </div>
 </template>
 

@@ -1,3 +1,5 @@
 <template>
-  <h1>README</h1>
+  <div class="container">
+    <div class="text-muted">A Beginner's Journey</div>
+  </div>
 </template>

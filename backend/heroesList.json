@@ -1,9 +1,10 @@
-{
-"Heros": [
+[
   {
       "Id": 1,
       "WorkoutTitle": "Green Smash",
-      "DeskripsiSingkat": "Dedicated to strength and discipline building Perform the workouts over a four day period per week. Take a day off after two days of training.",
+      "Img": "https://images.unsplash.com/photo-1517344884509-a0c97ec11bcc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
+      "Deskripsi": "Dedicated to strength and discipline building.",
+      "DeskripsiSingkat": "Dedicated to strength and discipline building. Perform the workouts over a four day period per week. Take a day off after two days of training.",
       "ExcerciseData": [
       {
           "Exercise": "Incline Barbell Bench Press",
@@ -27,50 +28,53 @@
   {
       "Id": 2,
       "WorkoutTitle": "Stripped Captain",
+      "Img": "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
+      "Deskripsi": "Build a pretty sturdy foundation of strength with a little muscle to boot.",
       "DeskripsiSingkat": "Build a pretty sturdy foundation of strength with a little muscle to boot. Perform the workouts over a four day period per week.",
       "ExcerciseData": [
       {
-          "Exercise": "Incline Barbell Bench Press",
+          "Exercise": "Incline Dumbbell Bench Press",
           "WarmUp": "2 x 10-15",
-          "WorkingSets": "3 x 4-8",
-          "RestPeriod": "2 min"
+          "WorkingSets": "4 x 8-12",
+          "RestPeriod": "90 sec"
       },
       {
-          "Exercise": "Barbell Bench Press",
+          "Exercise": "Dumbbell Bench Press",
           "WarmUp": "",
-          "WorkingSets": "3 x 4-8",
-          "RestPeriod": "2 min"
+          "WorkingSets": "3 x 8-12",
+          "RestPeriod": "90 sec"
       },
       {
-          "Exercise": "Bent Over Barbell Row",
-          "WarmUp": "2 x 10-15",
-          "WorkingSets": "3 x 4-8",
-          "RestPeriod": "2 min"
+          "Exercise": "Wide Grip Pull Up",
+          "WarmUp": "1 x 10",
+          "WorkingSets": "4 x 8-12",
+          "RestPeriod": "90 sec"
       }]
   },
   {
       "Id": 3,
       "WorkoutTitle": "Steele Muscle",
+      "Img": "https://images.unsplash.com/photo-1550345332-09e3ac987658?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
+      "Deskripsi": "Get ready to ramp up the intensity and really blow out the muscle.",
       "DeskripsiSingkat": "Get ready to ramp up the intensity and really blow out the muscle. Perform the workouts over a four day period per week.",
       "ExcerciseData": [
       {
-          "Exercise": "Incline Barbell Bench Press",
+          "Exercise": "Dumbbell Bench Press & Two Arm Dumbbell Row",
           "WarmUp": "2 x 10-15",
-          "WorkingSets": "3 x 4-8",
-          "RestPeriod": "2 min"
+          "WorkingSets": "3 x 10-15",
+          "RestPeriod": "1 min"
       },
       {
-          "Exercise": "Barbell Bench Press",
+          "Exercise": "Incline Dumbbell Fly & Close-Grip Pull Up",
           "WarmUp": "",
-          "WorkingSets": "3 x 4-8",
-          "RestPeriod": "2 min"
+          "WorkingSets": "3 x 10-15",
+          "RestPeriod": "1 min"
       },
       {
-          "Exercise": "Bent Over Barbell Row",
-          "WarmUp": "2 x 10-15",
-          "WorkingSets": "3 x 4-8",
-          "RestPeriod": "2 min"
+          "Exercise": "Incline Machine Chest Press & Machine Row",
+          "WarmUp": "",
+          "WorkingSets": "3 x 10-15",
+          "RestPeriod": "1 min"
       }]
   }
 ]
-}

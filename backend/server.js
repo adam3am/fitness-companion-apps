@@ -1,23 +1,26 @@
 const express = require('express');
-const jsonServer = require('json-server');
-// const bodyParser = require('body-parser');
 const app = express();
+const port = 3000;
 const cors = require('cors');
 
 app.use(cors());
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.get('/heros', (req, res) => {
-//   let heros = require('./heroesList.json'); 
-//   res.json(heros);
-// });
+app.get('/heroes', (req, res) => {
+  let heroes = require('./heroesList.json'); 
+  res.json(heroes);
+});
+app.get('/heroes/:heroId', (req, res) => {
+  let heroes = require('./heroesList.json'); 
+  res.json(heroes[req.params.heroId]);
+});
 
-app.get('/heros', jsonServer.router('heroesList.json'));
-app.listen(3000);
+app.get('/personals', (req, res) => {
+  let heros = require('./personalList.json'); 
+  res.json(heros);
+});
+app.get('/personals/:personalId', (req, res) => {
+  let heros = require('./personalList.json'); 
+  res.json(heros[req.params.personalId]);
+});
 
-// const routes = require('./routes/routes.js')(app, fs);
-
-// const server = app.listen(3000, () => {
-//   console.log('listening on port %s...', server.address().port);
-// });
+app.listen(port);

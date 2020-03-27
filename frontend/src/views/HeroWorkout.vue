@@ -1,51 +1,47 @@
 <template>
-  <div class="my-4"> 
-    <span class="text-muted">All Workout</span>
+  <div class="container"> 
+    <div class="text-muted">All Workout</div>
     <!-- Card Deck v-for? -->
-    <div class="card-deck my-2">
-      <div class="card" v-for="hero in heros" :key="hero.id">
-        <img class="card-img-top" src="../assets/img/pic5.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{hero.WorkoutTitle}}</h5>
-          <p class="card-text">{{hero.DeskripsiSingkat}}</p>
-        </div>
-        <div class="card-footer">
-          <b-button v-b-modal.modal-1>Details</b-button>
+    <div class="card-deck">
+      <div class="col-md-4 my-3" v-for="hero in heros" :key="hero.id">
+        <div class="card border-secondary h-100">
+          <img class="card-img-top" :src="hero.Img">
+          <div class="card-body">
+            <h5 class="card-title">{{hero.WorkoutTitle}}</h5>
+            <p class="card-text">{{hero.DeskripsiSingkat}}</p>
+          </div>
+          <div class="card-footer bg-transparent border-secondary">
+            <b-button v-b-modal="'modal-lg' + hero.Id" block variant="dark">Details</b-button>
+          </div>
+          <b-modal :id="'modal-lg' + hero.Id" :title="hero.WorkoutTitle" size="lg" ok-only ok-variant="dark" centered>
+            <h6 class="modal-title mb-3">{{hero.Deskripsi}}</h6>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Exercise</th>
+                  <th scope="col">Warm Up</th>
+                  <th scope="col">Working Sets</th>
+                  <th scope="col">Rest Period</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="heroi in hero.ExcerciseData" :key="heroi.id">
+                  <th scope="row">{{heroi.Exercise}}</th>
+                  <td>{{heroi.WarmUp}}</td>
+                  <td>{{heroi.WorkingSets}}</td>
+                  <td>{{heroi.RestPeriod}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </b-modal>
         </div>
       </div>
     </div>
-    <!-- Modal -->
-    <b-modal id="modal-center" centered ok-only title="BootstrapVue">
-      <table class="table table-lg">
-        <thead>
-          <tr>
-            <th scope="col">Exercise</th>
-            <th scope="col">Experience:</th>
-            <th scope="col">Education:</th>
-            <th scope="col">Experience:</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Youtube Playlist</td>
-            <td>Digital Marketing</td>
-          </tr>
-          <tr>
-            <td>Linux Academy</td>
-            <td>Graphic Design</td>
-          </tr>
-          <tr>
-            <td>Self-taught</td>
-            <td>Freelancer</td>
-          </tr>
-        </tbody>
-      </table>
-    </b-modal>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
+import { dataService } from '../shared/service';
 
 export default {
   data() {
@@ -55,10 +51,19 @@ export default {
   },
 
   async created() {
-    const response = await axios.get('http://localhost:3000/heros')
-    this.heros = response.data
-  }
+    await this.loadHeroes();
+  },
+  
+  methods: {
+    async loadHeroes() {
+      this.heros = [];
+      this.heros = await dataService.getHeroes();
+    },
 
+    getImage(hero) {
+      return require(hero.Img);
+    }
+  },
 
 };
 </script>

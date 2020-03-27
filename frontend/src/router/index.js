@@ -18,18 +18,8 @@ const routes = [
     component: HeroWorkout,
   },
   {
-    path: '/heroes/:heroId',
-    name: 'HeroId',
-    component: HeroWorkout,
-  },
-  {
     path: '/personals',
     name: 'Personals',
-    component: PersonalWorkout,
-  },
-  {
-    path: '/personals/:personalId',
-    name: 'personalId',
     component: PersonalWorkout,
   },
   {

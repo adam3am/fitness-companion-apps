@@ -1,5 +1,4 @@
-{
-  "Personals": [
+[
   {
       "Id": 1,
       "Workout": "Incline Barbell Bench Press"
@@ -13,4 +12,3 @@
       "Workout": "Bent Over Barbell Row"
   }
 ]
-}
