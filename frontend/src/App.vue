@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <Navbar />
-    <Judul />
-    <section>
+    <section id="app-container">
+      <Judul />
       <router-view/>
     </section>
   </div>

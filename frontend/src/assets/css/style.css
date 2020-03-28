@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+body {
+  font-family: 'MedievalSharp', sans-serif;
+  font-size: 15px;
+  line-height: 1.8em;
+  color: #3d3d50;
+  background: url("../img/pattern-bg.png") fixed;
+}
+
+.header {
+  margin: 0;
+  position: relative;
+}
+
+.btn {
+  margin-bottom: 0;
+  font-size: 14px;
+  border-radius: 0;
+  border: 0;
+  text-transform: uppercase;
+}
+
+.btn-lg {
+  font-size: 20px;
+}
+
+.btn-primary {
+  background-color: #FFC107;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active:focus {
+  background: #ff9800;
+}
+
+li.nav-item a {
+  text-transform: uppercase;
+}
+
+/* section#app-container {
+  width: 100%;
+  background-color: #1d2733;
+  overflow: auto;
+} */

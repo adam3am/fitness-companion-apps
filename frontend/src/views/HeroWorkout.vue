@@ -4,16 +4,16 @@
     <!-- Card Deck v-for? -->
     <div class="card-deck">
       <div class="col-md-4 my-3" v-for="hero in heros" :key="hero.id">
-        <div class="card border-secondary h-100">
+        <div class="card text-white bg-dark border-secondary h-100">
           <img class="card-img-top" :src="hero.Img">
           <div class="card-body">
             <h5 class="card-title">{{hero.WorkoutTitle}}</h5>
             <p class="card-text">{{hero.DeskripsiSingkat}}</p>
           </div>
-          <div class="card-footer bg-transparent border-secondary">
-            <b-button v-b-modal="'modal-lg' + hero.Id" block variant="dark">Details</b-button>
+          <div class="card-footer bg-dark border-secondary">
+            <b-button pill v-b-modal="'modal-lg' + hero.Id" block variant="primary">Details</b-button>
           </div>
-          <b-modal :id="'modal-lg' + hero.Id" :title="hero.WorkoutTitle" size="lg" ok-only ok-variant="dark" centered>
+          <b-modal hide-header-close ok-title="Got it" :id="'modal-lg' + hero.Id" :title="hero.WorkoutTitle" size="lg" ok-only ok-variant="dark" centered>
             <h6 class="modal-title mb-3">{{hero.Deskripsi}}</h6>
             <table class="table">
               <thead>
