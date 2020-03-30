@@ -1,14 +1,17 @@
 [
   {
-      "Id": 1,
-      "Workout": "Incline Barbell Bench Press"
+      "id": 1,
+      "Workout": "Wide Grip Pull Up",
+      "completed": false
   },
   {
-      "Id": 2,
-      "Workout": "Barbell Bench Press"
+      "id": 2,
+      "Workout": "Incline Sit Up",
+      "completed": false
   },
   {
-      "Id": 3,
-      "Workout": "Bent Over Barbell Row"
+      "id": 3,
+      "Workout": "Squat",
+      "completed": false
   }
 ]

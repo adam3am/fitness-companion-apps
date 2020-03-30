@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxanium&display=swap');
 
 body {
-  font-family: 'MedievalSharp', sans-serif;
-  font-size: 15px;
+  font-family: 'Oxanium', sans-serif;
+  font-size: 17px;
   line-height: 1.8em;
   color: #3d3d50;
   background: url("../img/pattern-bg.png") fixed;
@@ -26,7 +26,7 @@ body {
 }
 
 .btn-primary {
-  background-color: #FFC107;
+  background-color: #ffC107;
 }
 
 .btn-primary:hover,
@@ -38,9 +38,3 @@ body {
 li.nav-item a {
   text-transform: uppercase;
 }
-
-/* section#app-container {
-  width: 100%;
-  background-color: #1d2733;
-  overflow: auto;
-} */

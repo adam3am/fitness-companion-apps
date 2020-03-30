@@ -10,7 +10,7 @@
             <h5 class="card-title">Personal Workout</h5>
             <p class="card-text">Your Personal and Customized Workout.</p>
           <div class="card-footer bg-transparent border-secondary">
-            <router-link type="button" class="btn btn-primary btn-lg btn-block" to="/personals">Personal</router-link>
+            <router-link tag="button" class="btn btn-primary btn-lg btn-block" to="/personals">Personal</router-link>
           </div>
           </div>
         </div>
@@ -22,7 +22,7 @@
             <h5 class="card-title">Hero Workout</h5>
             <p class="card-text">Your Precompiled and Ready to Use Workout.</p>
           <div class="card-footer bg-transparent border-secondary">
-            <router-link type="button" class="btn btn-primary btn-lg btn-block" to="/heroes">Precompiled</router-link>
+            <router-link tag="button" class="btn btn-primary btn-lg btn-block" to="/heroes">Precompiled</router-link>
           </div>
           </div>
         </div>

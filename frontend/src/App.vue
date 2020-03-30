@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Navbar />
-    <section id="app-container">
+    <section>
       <Judul />
       <router-view/>
     </section>

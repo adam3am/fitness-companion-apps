@@ -14,7 +14,7 @@
           </li>
         </ul>
         <form class="form-inline mr-md-3" v-if="homePage()">
-          <input v-on:keyup="searchCity" id="myFilter" class="form-control rounded-pill" type="search" placeholder="Search Workout">
+          <input v-on:keyup="searchCity" id="myFilter" class="form-control rounded-pill" type="text" placeholder="Search Workout">
         </form>
       </div>
     </div>
@@ -22,8 +22,8 @@
 </template>
 
 <script>
-
 export default {
+  name: "navbar",
   methods: {
     homePage() {
       if(this.$route.path == "/heroes" ) {
@@ -32,34 +32,24 @@ export default {
         return false
       }
     },
+
     searchCity() {
       let input, filter, myItems, cards, i, current, h5, text;
       input = document.getElementById("myFilter");
       filter = input.value.toUpperCase();
       myItems = document.querySelector(".card-deck");
       cards = myItems.getElementsByClassName("col-md-4");
-      
       for (i = 0; i < cards.length; i++) {
-          current = cards[i];
-          h5 = current.querySelectorAll(".card-title")[0];
-          text = h5.innerText.toUpperCase();
-          if (text.indexOf(filter) > -1) {
-              current.style.display = "";
-          } else {
-              current.style.display = "none";
-          }
+        current = cards[i];
+        h5 = current.querySelectorAll(".card-title")[0];
+        text = h5.innerText.toUpperCase();
+        if (text.indexOf(filter) > -1) {
+            current.style.display = "";
+        } else {
+            current.style.display = "none";
+        }
       }
     }
-  }
-}
-
-// export default {
-//   computed: {
-//     filteredList() {
-//       return this.postList.filter(post => {
-//         return post.title.toLowerCase().includes(this.search.toLowerCase())
-//       });
-//     }
-//   }
-// }
+  },
+};
 </script>

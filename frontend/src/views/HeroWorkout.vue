@@ -11,7 +11,7 @@
             <p class="card-text">{{hero.DeskripsiSingkat}}</p>
           </div>
           <div class="card-footer bg-dark border-secondary">
-            <b-button pill v-b-modal="'modal-lg' + hero.Id" block variant="primary">Details</b-button>
+            <b-button v-b-modal="'modal-lg' + hero.Id" block variant="primary">Details</b-button>
           </div>
           <b-modal hide-header-close ok-title="Got it" :id="'modal-lg' + hero.Id" :title="hero.WorkoutTitle" size="lg" ok-only ok-variant="dark" centered>
             <h6 class="modal-title mb-3">{{hero.Deskripsi}}</h6>
@@ -44,6 +44,7 @@
 import { dataService } from '../shared/service';
 
 export default {
+  name: "hero-workout",
   data() {
     return {
       heros: []
@@ -58,12 +59,7 @@ export default {
     async loadHeroes() {
       this.heros = [];
       this.heros = await dataService.getHeroes();
-    },
-
-    getImage(hero) {
-      return require(hero.Img);
     }
   },
-
 };
 </script>
