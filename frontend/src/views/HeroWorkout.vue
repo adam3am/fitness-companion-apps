@@ -1,20 +1,21 @@
 <template>
   <div class="container"> 
     <div class="text-muted">All Workout</div>
-    <!-- Card Deck v-for? -->
+    <!-- Card Deck-->
     <div class="card-deck">
       <div class="col-md-4 my-3" v-for="hero in heros" :key="hero.id">
         <div class="card text-white bg-dark border-secondary h-100">
           <img class="card-img-top" :src="hero.Img">
           <div class="card-body">
             <h5 class="card-title">{{hero.WorkoutTitle}}</h5>
-            <p class="card-text">{{hero.DeskripsiSingkat}}</p>
+            <p class="card-text">{{hero.Deskripsi}}</p>
           </div>
           <div class="card-footer bg-dark border-secondary">
             <b-button v-b-modal="'modal-lg' + hero.Id" block variant="primary">Details</b-button>
           </div>
+          <!-- Modal -->
           <b-modal hide-header-close ok-title="Got it" :id="'modal-lg' + hero.Id" :title="hero.WorkoutTitle" size="lg" ok-only ok-variant="dark" centered>
-            <h6 class="modal-title mb-3">{{hero.Deskripsi}}</h6>
+            <h6 class="modal-title mb-3">{{hero.DeskripsiSingkat}}</h6>
             <table class="table">
               <thead>
                 <tr>
@@ -41,7 +42,7 @@
 </template>
 
 <script>
-import { dataService } from '../shared/service';
+import axios from 'axios';
 
 export default {
   name: "hero-workout",
@@ -57,9 +58,12 @@ export default {
   
   methods: {
     async loadHeroes() {
-      this.heros = [];
-      this.heros = await dataService.getHeroes();
-    }
+      await axios.get("http://localhost:3000/heroes").then(res => {
+        this.heros = res.data
+      }).catch ((err) => {
+          console.log(err);
+      })
+    },
   },
 };
 </script>

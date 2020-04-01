@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="text-muted">Please Select Workout Type</div>
-    <!-- Card -->
+    <!-- Cards -->
     <div class="card-deck">
       <div class="col my-3">
         <div class="card text-white bg-dark border-secondary h-100">

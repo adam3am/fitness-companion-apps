@@ -1,17 +1,17 @@
 [
   {
-      "id": 1,
-      "Workout": "Wide Grip Pull Up",
-      "completed": false
+    "id": 1,
+    "Workout": "Wide Grip Pull Up",
+    "completed": false
   },
   {
-      "id": 2,
-      "Workout": "Incline Sit Up",
-      "completed": false
+    "id": 2,
+    "Workout": "Incline Sit Up",
+    "completed": false
   },
   {
-      "id": 3,
-      "Workout": "Squat",
-      "completed": false
+    "id": 3,
+    "Workout": "Squat",
+    "completed": false
   }
 ]

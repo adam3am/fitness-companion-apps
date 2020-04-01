@@ -13,8 +13,9 @@
             <router-link to="/about" class="nav-link" exact>About</router-link>
           </li>
         </ul>
+        <!-- Search Bar -->
         <form class="form-inline mr-md-3" v-if="homePage()">
-          <input v-on:keyup="searchCity" id="myFilter" class="form-control rounded-pill" type="text" placeholder="Search Workout">
+          <input v-on:keyup="searchWorkout" id="myFilter" class="form-control rounded-pill" type="text" placeholder="Search Workout">
         </form>
       </div>
     </div>
@@ -33,7 +34,8 @@ export default {
       }
     },
 
-    searchCity() {
+    /* Search */
+    searchWorkout() {
       let input, filter, myItems, cards, i, current, h5, text;
       input = document.getElementById("myFilter");
       filter = input.value.toUpperCase();
