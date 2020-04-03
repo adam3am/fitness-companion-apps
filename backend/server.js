@@ -34,8 +34,4 @@ app.post('/personals', (req, res) => {
   console.log(heros);
 });
 
-app.delete('/personals', (req, res) => {
-  res.json(heros);
-});
-
 app.listen(port, () => console.log('app running'));

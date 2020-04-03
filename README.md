@@ -1,159 +1,187 @@
 # Fitness Companion Apps
 
-- Landing page yang dapat menampilkan berbagai destinasi dan kota.
-- Melihat detail biaya untuk akomodasi ke destinasi wisata.
+- Personal Workout menampilkan form yang dapat Meng-Input jenis-jenis Workout.
+- Precompiled Page menunjukkan daftar semua Workout yang sudah diatur.
+- Fungsi Search Bar pada halaman Hero Workout (Precompiled Page).
 
 ## A Beginner's Journey
 
-Pengalaman hari ke 30 saya mengikuti online program dari HACKTIV8.
+Pengalaman mengikuti project ke-2 dari HACKTIV8 online program.
 
-### Component
+### Frontend
 
-Fitness Companion Apps memiliki template literals yang digenerate JS menggunakan class="card-deck":
+My Fitness Companion memiliki beberapa komponen diantaranya Navbar yang memiliki search form di bagian atas:
 
 ```html
-  <section>
-    <div class="container" id="myItems">
-      <div class="card-deck">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item mr-md-3">
+          <router-link to="/" class="nav-link" exact>Home</router-link>
+        </li>
+        <li class="nav-item mr-md-3">
+          <router-link to="/about" class="nav-link" exact>About</router-link>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+```
 
+```html
+<!-- Search Bar -->
+<form class="form-inline mr-md-3" v-if="searchBar()">
+  <input v-on:keyup="searchWorkout" id="myFilter" class="form-control" type="text" placeholder="Search Workout">
+</form>
+```
+
+Komponen HeroWorkout menampilkan isi dari json menggunakan v-for dan tombol details untuk popup modal:
+
+```html
+<!-- Card Deck-->
+<div class="card-deck">
+  <div class="col-md-4 my-3" v-for="hero in heros" :key="hero.id">
+    <div class="card text-white bg-dark border-secondary h-100">
+      <img class="card-img-top" :src="hero.Img">
+      <div class="card-body">
+        <h5 class="card-title">{{hero.WorkoutTitle}}</h5>
+        <p class="card-text">{{hero.Deskripsi}}</p>
+      </div>
+      <div class="card-footer bg-dark border-secondary">
+        <b-button v-b-modal="'modal-lg' + hero.Id" block variant="primary">Details</b-button>
       </div>
     </div>
-  </section>
-  ```
-
-Fungsi modal box yang berisikan Judul Destinasi, Deskripsi, Gambar Destinasi, Lokasi, Biaya, dan tombol ‘Add to Wishlist’:
-
-```js
-function showHandleDetails(item) {
-  return `<div class="modal-header">
-            <button class="btn btn-primary" onClick="totalDetail(${item.id})" role="button">Add to Wishlist</button>
-          </div>
-          <div class="modal-body">
-            <img src="${item.gambar}" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">${item.destinasi}</h5>
-                <h6 class="text-secondary">${item.kota}</h6>
-                <p class="card-text">${item.deskripsi}</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted d-block my-2 data-price=${item.total}"">Total Expenses: ${item.total}</small>
-              </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-          </div>`;
-}
+  </div>
+</div>
 ```
 
-Tombol add to wishlist My Travel Guide dapat menampilkan biaya dalam price element yang terletak pada ‘navbar':
-
-```js
-function totalDetail(e) {
-  let todeck;
-  let totaldeck = document.querySelector(".total-price");
-  if (e) {
-    totaldeck.setAttribute("id", e)
-    places.filter(item => item.id === e).map(item => {
-      todeck = showTotalDetails(item);
-              let modeck = document.querySelector(".total-price")
-              modeck.value = todeck
-    });
-  }
-}
+```html
+<!-- Modal -->
+<b-modal hide-header-close ok-title="Got it" :id="'modal-lg' + hero.Id" :title="hero.WorkoutTitle" size="lg" ok-only ok-variant="dark" centered>
+  <h6 class="modal-title mb-3">{{hero.DeskripsiSingkat}}</h6>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Exercise</th>
+        <th scope="col">Warm Up</th>
+        <th scope="col">Working Sets</th>
+        <th scope="col">Rest Period</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="heroi in hero.ExcerciseData" :key="heroi.id">
+        <th scope="row">{{heroi.Exercise}}</th>
+        <td>{{heroi.WarmUp}}</td>
+        <td>{{heroi.WorkingSets}}</td>
+        <td>{{heroi.RestPeriod}}</td>
+      </tr>
+    </tbody>
+  </table>
+</b-modal>
 ```
 
-```js
-function showTotalDetails(item) {
-  return `Total Price: ${item.total}`;
-}
+PersonalWorkout memiliki form input dan tombol add lalu data di tampung di class="workoutList" dan juga checkbox:
+
+```html
+<form @submit.prevent="add" class="input-group mb-3 my-2">
+  <input type="hidden" class="form-control" placeholder="Workout Type" v-model="form.id">
+  <input type="hidden" class="form-control" placeholder="Workout Type" v-model="form.completed">
+  <input type="text" class="form-control" placeholder="Workout Type" v-model="form.Workout">
+  <div class="input-group-append">
+    <button class="btn btn-dark" type="submit">Add</button>
+  </div>
+</form>
 ```
 
-My Travel Guide memiliki fungsi pencarian ke berbagai destinasi tempat:
-
-```js
-function searchCity() {
-  let input, filter, myItems, cards, i, current, h5, text;
-  input = document.getElementById("myFilter");
-  filter = input.value.toUpperCase();
-  myItems = document.querySelector(".card-deck");
-  cards = myItems.getElementsByClassName("col-md-4");
-  
-  for (i = 0; i < cards.length; i++) {
-      current = cards[i];
-      h5 = current.querySelectorAll(".card-title")[0];
-      text = h5.innerText.toUpperCase();
-      if (text.indexOf(filter) > -1) {
-          current.style.display = "";
-      } else {
-          current.style.display = "none";
-      }
-  }
-}
+```html
+<!-- Checkbox -->
+<div class="workoutList" v-for="(person, i) in personals.slice().reverse()" :key="'person.id' + i">
+  <input type="checkbox" v-model="person.completed">
+  <div class="mr-3 ml-1" :class="{ completed : person.completed }">{{person.Workout}}</div>
+</div>
 ```
 
-Juga tombol drop down untuk memfilter dan menampilkan nama kota:
+### Backend
+
+My Fitness Companion  memiliki route berikut untuk precompiled  dan personal pages:
 
 ```js
-let kota = places.map(c => c.kota)
-let filteredCity = kota.filter((c, i) => {
-  return kota.indexOf(c) >= i
-})
+app.get('/heroes', (req, res) => {
+  res.json(heroes);
+});
+
+app.get('/personals', (req, res) => {
+  res.json(heros);
+});
+
+app.get('/heroes/:heroId', (req, res) => {
+  res.json(heroes[req.params.heroId]);
+});
+
+app.get('/personals/:personalId', (req, res) => {
+  res.json(heros[req.params.personalId]);
+});
 ```
 
-```js
-let dropdown = document.querySelector(".form-control-sm")
-filteredCity.map(c => {
-  dropdown.innerHTML += `<option value="${c}">${c}</option>`
-})
-```
+Route POST /personals digunakan untuk membuat data workout baru dari JSON File personalList.json:
 
 ```js
-function listDrop() {
-  let input, filter, myItems, cards, i, current, h5, text;
-  input = document.getElementById("select_id");
-  filter = input.value.toUpperCase();
-  myItems = document.getElementById("myItems");
-  cards = myItems.getElementsByClassName("col-md-4");
-  
-  for (i = 0; i < cards.length; i++) {
-    current = cards[i];
-    h5 = current.getElementsByClassName('text-secondary')[0];
-    text = h5.innerText.toUpperCase();
-    if (text.indexOf(filter) > -1) {
-        current.style.display = "";
-    } else {
-        current.style.display = "none";
-    }
-  }
-}
+app.post('/personals', (req, res) => {
+  let list = req.body;
+  console.log(list);
+  heros.push(list.heros);
+  res.json(list);
+  console.log(heros);
+});
 ```
 
 ## Development
 
-Untuk me-maintain project ini bisa di buka dengan VSCode. CSS, JS dan asset gambar terpisah di setiap folder.
+Untuk me-maintain project ini bisa di buka dengan VSCode. CSS dan assets terpisah di setiap Backend dan Frontend folder.
 
-```html
-<script src="js/script.js"></script>
+### Frontend Vue
+
+```text
+npm install
+npm run serve
 ```
 
-Total kalkulasi biaya destinasi dari setiap destinasi yang di tambahkan belum berfungsi dengan baik. Silakan kasih masukan:
+### Backend Node
+
+```text
+npm install
+nodemon server.js
+```
+
+Mengganti button add menjadi update, delete, close ketika diklik belum berfungsi dengan baik. Silakan kasih masukan:
+
+```html
+<form @submit.prevent="add" class="input-group mb-3 my-2">
+  <input type="hidden" class="form-control" placeholder="Workout Type" v-model="form.id">
+  <input type="hidden" class="form-control" placeholder="Workout Type" v-model="form.completed">
+  <input type="text" class="form-control" placeholder="Workout Type" v-model="form.Workout">
+  <div class="input-group-append">
+    <button class="btn btn-dark" type="submit">Add</button>
+  </div>
+</form>
+```
 
 ```js
-function totalDetail(e) {
-  let todeck;
-  let totaldeck = document.querySelector(".total-price");
-  if (e) {
-    totaldeck.setAttribute("id", e)
-    places.filter(item => item.id === e).map(item => {
-      todeck = showTotalDetails(item);
-              let modeck = document.querySelector(".total-price")
-              modeck.value = todeck
-    });
+async add(){
+  if (this.form.Workout.trim().length == 0) {
+    return
   }
-}
-
-function showTotalDetails(item) {
-  return `Total Price: ${item.total}`;
+  await axios.post("http://localhost:3000/personals", {heros: this.form}).then(res => {
+    this.load(res)
+    this.form.Workout = ''
+    this.form.completed
+    this.form.id++
+  })
+  this.$root.$emit('personalWorkout', this.form);
 }
 ```
 

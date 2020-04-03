@@ -14,8 +14,8 @@
           </li>
         </ul>
         <!-- Search Bar -->
-        <form class="form-inline mr-md-3" v-if="homePage()">
-          <input v-on:keyup="searchWorkout" id="myFilter" class="form-control rounded-pill" type="text" placeholder="Search Workout">
+        <form class="form-inline mr-md-3" v-if="searchBar()">
+          <input v-on:keyup="searchWorkout" id="myFilter" class="form-control" type="text" placeholder="Search Workout">
         </form>
       </div>
     </div>
@@ -26,7 +26,7 @@
 export default {
   name: "navbar",
   methods: {
-    homePage() {
+    searchBar() {
       if(this.$route.path == "/heroes" ) {
         return true
       } else {

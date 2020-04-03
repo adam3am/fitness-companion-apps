@@ -26,13 +26,13 @@ body {
 }
 
 .btn-primary {
-  background-color: #ffC107;
+  background-color: #ffC107!important;
 }
 
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active:focus {
-  background: #ff9800;
+  background: #ff9800!important;
 }
 
 li.nav-item a {

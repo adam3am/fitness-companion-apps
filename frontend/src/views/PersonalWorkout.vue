@@ -28,6 +28,7 @@
   }
   .completed {
     text-decoration: line-through;
+    color: darkgrey;
   }
 </style>
 
@@ -41,9 +42,10 @@ export default {
       form: {
         id: 4,
         Workout: '',
-        completed: ''
+        completed: false
       },
       personals: [],
+      updateSubmit: false
     }
   },
 
@@ -69,11 +71,11 @@ export default {
       await axios.post("http://localhost:3000/personals", {heros: this.form}).then(res => {
         this.load(res)
         this.form.Workout = ''
-        this.form.completed = ''
+        this.form.completed
         this.form.id++
       })
       this.$root.$emit('personalWorkout', this.form);
-    },
+    }
   },
 };
 </script>

@@ -1,7 +1,7 @@
 [
   {
     "Id": 1,
-    "WorkoutTitle": "Green Smash",
+    "WorkoutTitle": "Hulk Smash",
     "Img": "https://images.unsplash.com/photo-1572459815549-873917ec8c0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
     "DeskripsiSingkat": "Dedicated to strength and discipline building.",
     "Deskripsi": "Dedicated to strength and discipline building. Perform the workouts over a four day period per week. Take a day off after two days of training.",
@@ -27,7 +27,7 @@
   },
   {
     "Id": 2,
-    "WorkoutTitle": "Green Smash: Day Two",
+    "WorkoutTitle": "Hulk Smash: Day Two",
     "Img": "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
     "DeskripsiSingkat": "Dedicated to strength and discipline building.",
     "Deskripsi": "Dedicated to strength and discipline building. Perform the workouts over a four day period per week. Take a day off after two days of training.",
@@ -53,7 +53,7 @@
   },
   {
     "Id": 3,
-    "WorkoutTitle": "Stripped Captain",
+    "WorkoutTitle": "Captain Shield",
     "Img": "https://images.unsplash.com/photo-1550345332-09e3ac987658?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
     "DeskripsiSingkat": "Build a pretty sturdy foundation of strength with a little muscle to boot.",
     "Deskripsi": "Build a pretty sturdy foundation of strength with a little muscle to boot. Perform the workouts over a four day period per week.",
@@ -79,7 +79,7 @@
   },
   {
     "Id": 4,
-    "WorkoutTitle": "Stripped Captain: Day Two",
+    "WorkoutTitle": "Captain Shield: Day Two",
     "Img": "https://images.unsplash.com/photo-1573746713314-799fd4a3df9e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
     "DeskripsiSingkat": "Build a pretty sturdy foundation of strength with a little muscle to boot.",
     "Deskripsi": "Build a pretty sturdy foundation of strength with a little muscle to boot. Perform the workouts over a four day period per week.",
@@ -105,7 +105,7 @@
   },
   {
     "Id": 5,
-    "WorkoutTitle": "Steele Muscle",
+    "WorkoutTitle": "Iron Muscle",
     "Img": "https://images.unsplash.com/photo-1572459815294-26edc555608e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
     "DeskripsiSingkat": "Get ready to ramp up the intensity and really blow out the muscle.",
     "Deskripsi": "Get ready to ramp up the intensity and really blow out the muscle. Perform the workouts over a four day period per week.",
@@ -131,7 +131,7 @@
   },
   {
     "Id": 6,
-    "WorkoutTitle": "Steele Muscle: Day Two",
+    "WorkoutTitle": "Iron Muscle: Day Two",
     "Img": "https://images.unsplash.com/photo-1517344884509-a0c97ec11bcc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
     "DeskripsiSingkat": "Get ready to ramp up the intensity and really blow out the muscle.",
     "Deskripsi": "Get ready to ramp up the intensity and really blow out the muscle. Perform the workouts over a four day period per week.",
