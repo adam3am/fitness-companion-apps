@@ -141,7 +141,7 @@ app.post('/personals', (req, res) => {
 
 ## Development
 
-Untuk me-maintain project ini bisa di buka dengan VSCode. CSS dan assets terpisah di setiap Backend dan Frontend folder.
+Untuk me-maintain project bisa di buka dengan VSCode. CSS dan assets terpisah di setiap Backend dan Frontend folder.
 
 ### Frontend Vue
 
