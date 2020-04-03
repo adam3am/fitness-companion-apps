@@ -187,7 +187,7 @@ async add(){
 
 ## Built With
 
-- [Vue](https://vue.org) - JavaScript Framework
+- [Vue](https://vuejs.org) - JavaScript Framework
 - [Express](https://expressjs.com) - Node.js Framework
 - [BootstrapVue](https://bootstrap-vue.js.org/) - CSS Framework
 
